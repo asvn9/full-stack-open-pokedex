@@ -14,4 +14,4 @@ jobs:
         run: |
           echo "Hello World!"
           echo "Current date: $(date)"
-          echo "Current directory: $(ls)"
+          echo "Current directory: ls $(pwd)"
