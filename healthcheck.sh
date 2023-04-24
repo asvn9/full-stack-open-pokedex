@@ -2,7 +2,7 @@
 
 response=$(curl -s https://asvnpokedex.fly.dev/health)
 
-if [ "$response" = "ok" ]; then
+if [ "$response" = "ok2" ]; then
   echo "Health check successful"
   exit 0
 else
