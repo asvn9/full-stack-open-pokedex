@@ -30,6 +30,13 @@ processes = []
     soft_limit = 20
     type = "connections"
 
+      [[services.script_checks]]
+  command       = "/healthcheck.sh"
+  grace_period  = "1s"
+  interval      = "5s"
+  restart_limit = 0
+  timeout       = "1s"
+
      [[services.http_checks]]
     interval = 10000
     grace_period = "5s"
