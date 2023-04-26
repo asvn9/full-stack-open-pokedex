@@ -47,6 +47,7 @@ jobs:
     needs: [simple_deployment_pipeline, deploy]
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v2
       - uses: anothrNick/github-tag-action@1.55.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
