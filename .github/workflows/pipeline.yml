@@ -33,7 +33,6 @@ jobs:
       - name: Bump version and push tag
         if: "!contains(github.event.head_commit.message, '#skip')"
         uses: anothrNick/github-tag-action@1.55.0
-        env:
   tag_release:
     if: ${{ github.event_name == 'push' }}
     needs: [simple_deployment_pipeline]
