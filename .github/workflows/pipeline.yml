@@ -30,7 +30,6 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-<<<<<<< HEAD
   tag_release:
     if: ${{ github.event_name == 'push' }}
     needs: [simple_deployment_pipeline]
@@ -38,10 +37,5 @@ jobs:
     steps:
       - uses: anothrNick/github-tag-action@1.55.0
       - env:
-=======
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.55.0
-        env:
->>>>>>> 1280190df7af4ca86c38c483eae773b7b2149ebf
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
