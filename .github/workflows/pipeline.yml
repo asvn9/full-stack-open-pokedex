@@ -30,14 +30,13 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - name: Bump version and push tag
-        if: "!contains(github.event.head_commit.message, '#skip')"
   tag_release:
     if: ${{ github.event_name == 'push' }}
+    if: "!contains(github.event.head_commit.message, '#skip')"
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
       - uses: anothrNick/github-tag-action@1.55.0
-        with:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
