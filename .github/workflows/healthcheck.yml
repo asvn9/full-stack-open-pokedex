@@ -2,7 +2,7 @@ name: Periodic Health Check
 
 on:
   schedule:
-    - cron: "0 */1 * * *" # Run every 2 hours
+    - cron: "0 */12 * * *" # Run every 12 hours
 
 jobs:
   health-check:
